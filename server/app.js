@@ -35,6 +35,11 @@ app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/product', productRouter)
 app.use('/api/v1/order', OrderRouter)
 
+// Root path handler
+app.get('/', (req, res) => {
+  res.json({ message: 'API berhasil dijalankan!' });
+});
+
 app.use(notFound)
 app.use(errorHandler)
 
